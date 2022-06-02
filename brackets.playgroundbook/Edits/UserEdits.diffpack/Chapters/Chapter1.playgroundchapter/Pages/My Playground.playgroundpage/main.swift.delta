@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Diff</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>import UIKit
+
+func brackets(_s: String)-&gt; Bool {
+    var stack: [Character] = []
+    let matches: [Character:Character] = ["(":")", "[":"]", "{":"}"]
+    
+    for char in _s {
+        if let match = matches[char] {
+            stack.append(match)
+        }
+        else if stack.last == char {
+            stack.popLast()
+        }
+        else {
+            return false
+        }
+    }
+    return stack.isEmpty
+}
+
+print(brackets(_s: "(())"))
+print(brackets(_s: "{{)"))
+</string>
+			<key>ModifiedRange</key>
+			<string>{0, 471}</string>
+			<key>OriginalContent</key>
+			<string>
+</string>
+			<key>OriginalRange</key>
+			<string>{0, 1}</string>
+		</dict>
+	</array>
+	<key>File</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/My Playground.playgroundpage/main.swift</string>
+</dict>
+</plist>
